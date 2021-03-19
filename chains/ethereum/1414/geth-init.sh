@@ -14,7 +14,7 @@ do
     cd $(pwd)/chains/${ORIGIN}/${chain}/ \
       && cp genesis.json bootnodes ${HOST_DATA_DIR}/${ORIGIN}/${chain}/
     docker run -v ${HOST_DATA_DIR}/${ORIGIN}/${chain}/:/chain_data \
-        ethereum/client-go:stable \
+        ethereum/client-go:v1.9.25 \
         --datadir /chain_data \
         init \
         /chain_data/genesis.json
