@@ -23,24 +23,24 @@ ost-1414-clean:
 ost-1414-trash:
 	rm -rf ${HOST_DATA_DIR}/ethereum/1414
 
-# OST testnets 1407 against Ropsten
+# OST testnets 1406 against Ropsten
 
-ost-1407-init:
-	bash chains/ropsten/1407/geth-init.sh
+ost-1406-init:
+	bash chains/ropsten/1406/geth-init.sh
 
-ost-1407-start:
-	docker-compose -f chains/ropsten/1407/docker-compose.yml \
+ost-1406-start:
+	docker-compose -f chains/ropsten/1406/docker-compose.yml \
 		--env-file=.env up --detach
 
-ost-1407-stop:
-	docker-compose -f chains/ropsten/1407/docker-compose.yml \
+ost-1406-stop:
+	docker-compose -f chains/ropsten/1406/docker-compose.yml \
 		--env-file=.env stop
 
-ost-1407-logs:
-	docker-compose -f chains/ropsten/1407/docker-compose.yml logs -f
+ost-1406-logs:
+	docker-compose -f chains/ropsten/1406/docker-compose.yml logs -f
 
-ost-1407-clean:
-	docker-compose -f chains/ropsten/1407/docker-compose.yml down -v --remove-orphans
+ost-1406-clean:
+	docker-compose -f chains/ropsten/1406/docker-compose.yml down -v --remove-orphans
 
-ost-1407-trash:
-	rm -rf ${HOST_DATA_DIR}/ropsten/1407
+ost-1406-trash:
+	rm -rf ${HOST_DATA_DIR}/ropsten/1406

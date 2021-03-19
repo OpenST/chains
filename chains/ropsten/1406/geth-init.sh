@@ -4,7 +4,7 @@
 # Run this executable to initialise the datadir from the genesis files.
 
 ORIGIN=ropsten
-CHAINS=(1407)
+CHAINS=(1406)
 
 for chain in ${CHAINS[*]}
 do

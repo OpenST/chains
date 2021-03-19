@@ -1,11 +1,11 @@
 version: "3"
 services:
-  geth-1407:
+  geth-1406:
     image: ethereum/client-go:v1.9.25
     restart: always
-    command: "--datadir /root --bootnodes enode://e60ff2d4ed05213b8ae32ca00fd7a0252d7fe8fea48911043c3ea3db8749130014e952ee22f5600e649eb8e25fbffb64e4e1f7feb915fd2d7d518b86973c24af@99.80.85.164:30301 --networkid 1407"
+    command: "--datadir /root --bootnodes enode://edaed9d130c1d4580a17ecf572500c2f30ef4bfc0fbee3764a1a23a837b8ee10a3698051c5339473132343e69729b243f565873b233031467599a17e08252de0@99.80.80.138:30301 --networkid 1406"
     volumes:
-      - "${HOST_DATA_DIR}/ropsten/1407:/root"
+      - "${HOST_DATA_DIR}/ropsten/1406:/root"
     ports:
       - "127.0.0.1:8545:8545"
       - "127.0.0.1:8546:8546"
