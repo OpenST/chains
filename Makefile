@@ -8,7 +8,7 @@ ost-1414-init:
 
 ost-1414-start:
 	docker-compose -f chains/ethereum/1414/docker-compose.yml \
-		--env-file=.env up
+		--env-file=.env up --detach
 
 ost-1414-stop:
 	docker-compose -f chains/ethereum/1414/docker-compose.yml \
@@ -27,7 +27,7 @@ ost-1407-init:
 
 ost-1407-start:
 	docker-compose -f chains/ropsten/1407/docker-compose.yml \
-		--env-file=.env up
+		--env-file=.env up --detach
 
 ost-1407-stop:
 	docker-compose -f chains/ropsten/1407/docker-compose.yml \
