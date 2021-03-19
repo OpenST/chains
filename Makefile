@@ -14,6 +14,9 @@ ost-1414-stop:
 	docker-compose -f chains/ethereum/1414/docker-compose.yml \
 		--env-file=.env stop
 
+ost-1414-logs:
+	docker-compose -f chains/ethereum/1414/docker-compose.yml logs -f
+
 ost-1414-clean:
 	docker-compose -f chains/ethereum/1414/docker-compose.yml down -v --remove-orphans
 
@@ -32,6 +35,9 @@ ost-1407-start:
 ost-1407-stop:
 	docker-compose -f chains/ropsten/1407/docker-compose.yml \
 		--env-file=.env stop
+
+ost-1407-logs:
+	docker-compose -f chains/ropsten/1407/docker-compose.yml logs -f
 
 ost-1407-clean:
 	docker-compose -f chains/ropsten/1407/docker-compose.yml down -v --remove-orphans
