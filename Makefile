@@ -23,6 +23,29 @@ ost-1414-clean:
 ost-1414-trash:
 	rm -rf ${HOST_DATA_DIR}/ethereum/1414
 
+# Playground
+
+plg-init:
+	bash chains/ethereum/1414/geth-init.sh
+
+plg-start:
+	docker-compose -f playground/ethereum/1414/docker-compose.yml \
+		--env-file=.env up --detach
+
+plg-stop:
+	docker-compose -f playground/ethereum/1414/docker-compose.yml \
+		--env-file=.env stop
+
+plg-logs:
+	docker-compose -f playground/ethereum/1414/docker-compose.yml logs -f
+
+plg-clean:
+	docker-compose -f playground/ethereum/1414/docker-compose.yml down -v --remove-orphans
+
+plg-trash:
+	rm -rf ${HOST_DATA_DIR}/ethereum/1414
+
+
 # OST testnets 1406 against Ropsten
 
 ost-1406-init:
