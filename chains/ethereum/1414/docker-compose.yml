@@ -3,12 +3,19 @@ services:
   geth-1414:
     image: ethereum/client-go:v1.9.25
     restart: always
-    command: "--datadir /root --bootnodes enode://c677ea2e455828db3d2f7bbc232518cfe683475edae66ab46fcf27bc21efb991fb37776f815d679a449374e7363692aee3c89a70f6b8cd754abc95fa11a3c757@99.80.181.153:30301,enode://4d27ddef2f96d94580d0b414bc9d4958da0e56a83bd79903189adb284d515669d50802d50308d0b5c72ec96d8579abd9d21e769c6efa088921d264d2dd08fb89@134.209.201.151:30303 --networkid 1414 --http --http.addr 0.0.0.0 --http.port 8545 --http.api personal,admin,db,eth,net,web3,miner,shh,txpool,debug"
+    command: >
+        "--datadir /root
+         --bootnodes enode://c677ea2e455828db3d2f7bbc232518cfe683475edae66ab46fcf27bc21efb991fb37776f815d679a449374e7363692aee3c89a70f6b8cd754abc95fa11a3c757@99.80.181.153:30301,enode://4d27ddef2f96d94580d0b414bc9d4958da0e56a83bd79903189adb284d515669d50802d50308d0b5c72ec96d8579abd9d21e769c6efa088921d264d2dd08fb89@134.209.201.151:30303
+         --networkid 1414
+         --http
+         --http.addr 127.0.0.1
+         --http.port 8545
+         --http.api personal,admin,db,eth,net,web3,miner,shh,txpool,debug,clique"
     volumes:
       - "${HOST_DATA_DIR}/ethereum/1414:/root"
     ports:
-      - "0.0.0.0:8545:8545"
-      - "0.0.0.0:8546:8546"
+      - "127.0.0.1:8545:8545"
+      - "127.0.0.1:8546:8546"
       - "0.0.0.0:30303:30303"
       - "0.0.0.0:30303:30303/udp"
     security_opt:
